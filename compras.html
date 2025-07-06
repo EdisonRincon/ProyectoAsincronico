@@ -202,6 +202,12 @@
                         };
 
                         //Dibujar todos los productos guardados en el carrito
+                        // Agregar producto al carrito
+                        function anadirProductoAlCarrito(evento) {
+                            carrito.push(evento.target.getAttribute("marcador"));
+                            renderizarCarrito();
+                        }
+                        // Mostrar productos en el carrito
                         function renderizarCarrito(){
                             //Vaciamos todo el html.
                             DOMcarrito.textContent = "";
