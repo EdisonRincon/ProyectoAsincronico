@@ -184,10 +184,18 @@
                             const miNodoPrecio = document.createElement("p");
                             miNodoPrecio.classList.add("card-text");
                             miNodoPrecio.textContent = `${divisa}${info.precio}`;
-
+                            // Boton
+                            const miNodoBoton = document.createElement('button');
+                            miNodoBoton.classList.add('btn', 'btn-primary');
+                            miNodoBoton.textContent = 'Agregar';
+                            miNodoBoton.setAttribute('marcador', info.id);
+                            miNodoBoton.addEventListener('click', anadirProductoAlCarrito);
+                            
                             //insertamos
                             miNodoCardBody.appendChild(miNodoImagen);
                             miNodoCardBody.appendChild(miNodoTitle);
+                            miNodoCardBody.appendChild(miNodoPrecio);
+                            miNodoCardBody.appendChild(miNodoBoton);
                             miNodo.appendChild(miNodoCardBody);
                             DOMitems.appendChild(miNodo);
                         });
