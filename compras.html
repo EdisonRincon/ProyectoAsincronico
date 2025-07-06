@@ -205,7 +205,13 @@
                         // Agregar producto al carrito
                         function anadirProductoAlCarrito(evento) {
                             carrito.push(evento.target.getAttribute("marcador"));
+                            // Actualizamos el carrito
                             renderizarCarrito();
+                            handleCarritoValue(carrito.length)
+                        }
+                        function handleCarritoValue(value) {
+                        const carritoContainer = document.getElementById("carrito-value");
+                        carritoContainer.textContent =  `${value}`
                         }
                         // Mostrar productos en el carrito
                         function renderizarCarrito(){
