@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     // Actualizamos el LocalStorage
     guardarCarritoEnLocalStorage();
 
-    handleCarritoValue(carrito.length)
+    handleCarritoValue(carrito.length);
     
     renderizarProductos();
     renderizarCarrito();                  
