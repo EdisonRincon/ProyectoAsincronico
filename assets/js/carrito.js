@@ -93,6 +93,19 @@ document.addEventListener("DOMContentLoaded",() =>{
             DOMitems.appendChild(miNodo);
         });
     }
+    //Obten el contador del almacenamiento local-Contador de visitas
+    let visitas = localStorage.getItem("contadorVisitas");
+    //contador
+    if(!visitas){
+        visitas =0;
+    }
+    //incrementa el contador
+    visitas++;
+    //Guardar el nuevo contador en el almacenamiento local
+    localStorage.setItem("contadorVisitas", visitas);
+
+    // Muestra el contador en la página
+    document.getElementById('contador').textContent = visitas;
 
     //Dibujar todos los productos guardados en el carrito
     // Evento para añadir producto al carrito de la compra
@@ -141,6 +154,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             miNodo.appendChild(miBoton);
             DOMcarrito.appendChild(miNodo);
         });
+        DOMtotal.textContent = calcularTotal();
     }
     /**
     * Evento para borrar un elemento del carrito
@@ -153,6 +167,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             return carritoId !== id;
         });
         renderizarCarrito();
+        guardarCarritoEnLocalStorage();
         handleCarritoValue(carrito.length);
     }    
     //Calcular total
@@ -169,25 +184,25 @@ document.addEventListener("DOMContentLoaded",() =>{
         carrito = [];
         renderizarCarrito();
         localStorage.clear();
-    } 
-    //Contador de visitas
-    let visitas = localStorage.getItem("contadorVisitas");
-    //contador
-    if(!visitas){
-        visitas =0;
     }
-    //incrementar
-    visitas++;
-    //guardar local
-    localStorage.setItem("contadorVisitas", visitas);
 
-    // volvemos a renderizar
-    renderizarCarrito();
-    // Actualizamos el LocalStorage
-    guardarCarritoEnLocalStorage();
+    function guardarCarritoEnLocalStorage() {
+        miLocalStorage.setItem('carrito', JSON.stringify(carrito));
+    }
 
-    handleCarritoValue(carrito.length);
-    
+    function cargarCarritoDeLocalStorage() {
+        if (miLocalStorage.getItem('carrito') !== null) {
+            carrito = JSON.parse(miLocalStorage.getItem('carrito'));
+            handleCarritoValue(carrito.length);
+        }
+    }
+
+    // Eventos
+    DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+    filtroSelect.addEventListener('change', renderizarProductos);
+
+    // Inicio
+    cargarCarritoDeLocalStorage();
     renderizarProductos();
     renderizarCarrito();                  
 });
