@@ -7,19 +7,29 @@ document.addEventListener("DOMContentLoaded",() =>{
             id:1,
             nombre: 'Carne fina, de alta calidad, seleccionada',
             precio: 18700,
-            imagen: 'assets/img/Carne fina-libra.jpeg'
+            imagen: 'assets/img/Carne fina-libra.jpeg',
+            categoria: "Carnes y Pescados"
         },
         {
             id:2,
             nombre: 'Pan, fresco',
             precio: 2500,
-            imagen: 'assets/img/Pan de leche.jpeg'
+            imagen: 'assets/img/Pan de leche.jpeg',
+            categoria: "Panadería y Pastelería"
         },
         {
             id:3,
             nombre: 'Whisky Johnnie Walker',
             precio: 108000,
-            imagen: 'assets/img/Whisky Johnnie Walker.jpeg'
+            imagen: 'assets/img/Whisky Johnnie Walker.jpeg',
+            categoria: "Bebidas y Licores"
+        },
+        {
+            id:4,
+            nombre: 'Huevos',
+            precio: 108000,
+            imagen: 'assets/img/Huevos AAA en panal.jpeg',
+            categoria: "Lácteos y Huevos"
         }
     ];
     let carrito =[];
@@ -71,7 +81,7 @@ document.addEventListener("DOMContentLoaded",() =>{
     };
 
     //Dibujar todos los productos guardados en el carrito
-    // Evento para Agregar producto al carrito de la compra
+    // Evento para añadir producto al carrito de la compra
     function anadirProductoAlCarrito(evento) {
         //Añadimos el Nodo a nuestro carrito
         carrito.push(evento.target.getAttribute("marcador"));
