@@ -128,38 +128,42 @@ document.addEventListener("DOMContentLoaded",() =>{
         carrito = carrito.filter((carritoId) => {
             return carritoId !== id;
         });
-        //Calcular total
-        function calcularTotal(){
-            return carrito.reduce((total, item)=> {
-                const miItem = baseDeDatos.filter((itemBaseDatos)=>{
-                    return itemBaseDatos.id === parseInt(item);
-                });
-                return total + miItem[0].precio;
-            },0).toFixed(2);
-        }
-        //Vaciar carrito
-        function vaciarCarrito(){
-            carrito = [];
-            renderizarCarrito();
-        } 
-        //Contador de visitas
-        let visitas = localStorage.getItem("contadorVisitas");
-        //contador
-        if(!visitas){
-            visitas =0;
-        }
-        //incrementar
-        visitas++;
-        //guardar local
-        localStorage.setItem("contadorVisitas", visitas);
-        
-       // volvemos a renderizar
         renderizarCarrito();
-        // Actualizamos el LocalStorage
-        guardarCarritoEnLocalStorage();
-
-        handleCarritoValue(carrito.length)
+        handleCarritoValue(carrito.length);
+    }    
+    //Calcular total
+    function calcularTotal(){
+        return carrito.reduce((total, item)=> {
+            const miItem = baseDeDatos.filter((itemBaseDatos)=>{
+                return itemBaseDatos.id === parseInt(item);
+            });
+            return total + miItem[0].precio;
+        },0).toFixed(2);
     }
+    //Vaciar carrito
+    function vaciarCarrito(){
+        carrito = [];
+        renderizarCarrito();
+        localStorage.clear();
+    } 
+    //Contador de visitas
+    let visitas = localStorage.getItem("contadorVisitas");
+    //contador
+    if(!visitas){
+        visitas =0;
+    }
+    //incrementar
+    visitas++;
+    //guardar local
+    localStorage.setItem("contadorVisitas", visitas);
+
+    // volvemos a renderizar
+    renderizarCarrito();
+    // Actualizamos el LocalStorage
+    guardarCarritoEnLocalStorage();
+
+    handleCarritoValue(carrito.length)
+    
     renderizarProductos();
     renderizarCarrito();                  
 });
