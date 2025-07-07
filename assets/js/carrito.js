@@ -135,6 +135,11 @@ document.addEventListener("DOMContentLoaded",() =>{
                 });
                 return total + miItem[0].precio;
             },0).toFixed(2);
+        }
+        //Vaciar carrito
+        function vaciarCarrito(){
+            carrito = [];
+            renderizarCarrito();
         } 
         // volvemos a renderizar
         renderizarCarrito();
