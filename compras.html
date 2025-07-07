@@ -153,6 +153,17 @@
                     </li>
                     <li class="pb-3">
                         <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="compras.html?categoria=todos">
+                            Lacteos y Huevos
+                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                        </a>
+                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                            <li><a class="text-decoration-none" href="#">Huevos</a></li>
+                            <li><a class="text-decoration-none" href="#">Queso</a></li>
+                            <li><a class="text-decoration-none" href="#">Leche</a></li>                            
+                        </ul>
+                    </li>
+                    <li class="pb-3">
+                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="compras.html?categoria=todos">
                             Carnes y Pescados
                             <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
@@ -181,10 +192,15 @@
                     </div>
                     <div class="col-md-6 pb-4">
                         <div class="d-flex">
-                            <select class="form-control">
-                                <option>Presentar</option>
-                                <option>A a Z</option>
-                                <option>Item</option>
+                            <select id="filtro" class="form-control">
+                                <option value="todas">Todas</option>
+                                <option value="todos">Todos los productos</option>
+                                <option value="granosBasicos">Granos Básicos</option>
+                                <option value="frutasVerduras">Frutas y Verduras</option>
+                                <option value="bebidasLicores">Bebidas y lLicoresn></option>
+                                <option value="panaderiaPasteleria">panadería y Pastelería</option>
+                                <option value="lacteosHuevos">Lácteos y Huevos</option>                                
+                                <option value="carnesPescados">Carnes y Pescados</option>
                             </select>
                         </div>
                     </div>
