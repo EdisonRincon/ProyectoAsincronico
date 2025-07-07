@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         renderizarCarrito();
         handleCarritoValue(carrito.length)
     }
+    //Mostrar cantidad de productos en el carrito
     function handleCarritoValue(value) {
     const carritoContainer = document.getElementById("carrito-value");
     carritoContainer.textContent =  `${value}`
@@ -141,7 +142,8 @@ document.addEventListener("DOMContentLoaded",() =>{
             carrito = [];
             renderizarCarrito();
         } 
-        // volvemos a renderizar
+       
+       // volvemos a renderizar
         renderizarCarrito();
         // Actualizamos el LocalStorage
         guardarCarritoEnLocalStorage();
