@@ -27,9 +27,23 @@ document.addEventListener("DOMContentLoaded",() =>{
         {
             id:4,
             nombre: 'Huevos',
-            precio: 108000,
+            precio: 18000,
             imagen: 'assets/img/Huevos AAA en panal.jpeg',
             categoria: "Lácteos y Huevos"
+        },
+        {
+            id:5,
+            nombre: 'Pan',
+            precio: 2500,
+            imagen: 'assets/img/Pan de leche.jpeg',
+            categoria: "Lácteos y Huevos"
+        },
+        {
+            id:6,
+            nombre: 'Arroz',
+            precio: 2200,
+            imagen: 'assets/img/Arroz.jpeg',
+            categoria: "Granos Básicos"
         }
     ];
     let carrito =[];
@@ -78,7 +92,7 @@ document.addEventListener("DOMContentLoaded",() =>{
             miNodo.appendChild(miNodoCardBody);
             DOMitems.appendChild(miNodo);
         });
-    };
+    }
 
     //Dibujar todos los productos guardados en el carrito
     // Evento para añadir producto al carrito de la compra
