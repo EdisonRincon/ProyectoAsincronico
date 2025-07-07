@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         //Vaciamos todo el html.
         DOMcarrito.textContent = "";
         //Quitamos los duplicados
-        const carritoSinDuplicados = [...new set(carrito)];
+        const carritoSinDuplicados = [...new Set(carrito)];
         //Generamos los Nodos a partir del carrito
         carritoSinDuplicados.forEach((item) =>{
             //Obtenemos el item que necesitamos de la variable base de datos
@@ -103,8 +103,8 @@ document.addEventListener("DOMContentLoaded",() =>{
             },0);
             //Creamos el nodo del item del carrito
             const miNodo = document.createElement('li');
-                  miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-                  miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+            miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
             //Creamos el boton de borrar
             const miBoton = document.createElement("button");
             miBoton.classList.add("btn", "btn-danger", "mx-5");
