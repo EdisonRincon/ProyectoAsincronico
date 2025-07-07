@@ -52,12 +52,19 @@ document.addEventListener("DOMContentLoaded",() =>{
     const DOMcarrito = document.querySelector("#carrito");
     const DOMtotal = document.querySelector("#total");
     const DOMbotonVaciar = document.querySelector("#boton-vaciar");
- 
+    const miLocalStorage = window.localStorage;
+    const filtroSelect = document.getElementById("filtro");
     
     //Sección de funciones
     /*Dibujamos todos los productos a partir de la base de datos*/
     function renderizarProductos(){
-        baseDeDatos.forEach((info) =>{
+        DOMitems.innerHTML = "";
+
+        const filtro = filtroSelect.value;
+        const productosFiltrados = baseDeDatos.filter(producto => 
+            filtro === "todas" || producto.categoria === filtro
+        );
+        productosFiltrados.forEach((info) =>{
             //Estructura
             //Crea un documento
             const miNodo = document.createElement("div");
@@ -114,6 +121,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         carrito.push(evento.target.getAttribute("marcador"));
         // Actualizamos el carrito
         renderizarCarrito();
+        guardarCarritoEnLocalStorage();
         handleCarritoValue(carrito.length)
     }
     //Mostrar cantidad de productos en el carrito
