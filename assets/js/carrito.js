@@ -142,7 +142,17 @@ document.addEventListener("DOMContentLoaded",() =>{
             carrito = [];
             renderizarCarrito();
         } 
-       
+        //Contador de visitas
+        let visitas = localStorage.getItem("contadorVisitas");
+        //contador
+        if(!visitas){
+            visitas =0;
+        }
+        //incrementar
+        visitas++;
+        //guardar local
+        localStorage.setItem("contadorVisitas", visitas);
+        
        // volvemos a renderizar
         renderizarCarrito();
         // Actualizamos el LocalStorage
