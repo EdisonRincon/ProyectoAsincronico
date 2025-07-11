@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         },
         {
             id:5,
-            nombre: 'Pan',
+            nombre: 'Pan de leche',
             precio: 2500,
             imagen: 'assets/img/Pan de leche.jpeg',
             categoria: "Lácteos y Huevos"
