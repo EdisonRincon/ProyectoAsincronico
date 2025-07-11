@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         },
         {
             id:2,
-            nombre: 'Pan, fresco',
+            nombre: 'Pan de leche, fresco',
             precio: 2500,
             imagen: 'assets/img/Pan de leche.jpeg',
             categoria: "Panadería y Pastelería"
@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded",() =>{
         },
         {
             id:5,
-            nombre: 'Pan de leche',
-            precio: 2500,
-            imagen: 'assets/img/Pan de leche.jpeg',
-            categoria: "Lácteos y Huevos"
+            nombre: 'Tomate chonto',
+            precio: 3200,
+            imagen: 'assets/img/tomate_chonto.jpeg',
+            categoria: "Frutas y Verduras"
         },
         {
             id:6,
