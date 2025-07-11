@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",() =>{
         {
             id:3,
             nombre: 'Whisky Johnnie Walker',
-            precio: 108000,
+            precio: 104700,
             imagen: 'assets/img/Whisky Johnnie Walker.jpeg',
             categoria: "Bebidas y Licores"
         },
