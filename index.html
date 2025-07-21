@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Tienda de mi Barrio.</title>
     <!--iconos-->
-    <link rel="apple-touch.icon" href="assets/img/apple-icon.png">
+    <link rel="apple-touch.icon" href="assets/img/icono de la tienda.jpeg">
     <!--css-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -93,7 +93,24 @@
         </div>
     </nav >
     <!--Fin de menú-->
-    
+     <!-- Modal -->
+<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="w-100 pt-1 mb-5 text-right">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <div class="input-group mb-2">
+                <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Buscar ...">
+                <button type="submit" class="input-group-text bg-success text-light">
+                    <i class="fa fa-fw fa-search text-white"></i>
+                </button>
+                
+            </div>
+            <p><br>Escriba el producto a Buscar ...</p>
+        </form>
+    </div>
+</div>
     <!--Inicio secciones-->
     <!-- carrusel -->
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -246,7 +263,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="compras.html">
-                            <img src="assets/img/Pan de leche.jpeg" alt="carne" class="card-img-top">
+                            <img src="assets/img/Pan de leche.jpeg" alt="pan" class="card-img-top">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">
@@ -366,7 +383,7 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
-
+    <script src="assets/js/carrito.js"></script>
 
 </body>
 </html>
